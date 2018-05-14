@@ -2,16 +2,65 @@
 <html>
 <head>
   <title>Play Rock, Paper, Scissors!</title>
+  <meta charset="utf-8">
 </head>
 <body>
   <script>
+  var playerChoice = prompt("Rock, paper, or scissors?")
+  const computerSelection = computerPlay()
+  console.log(playRound(playerChoice, computerSelection))
+
   function computerPlay() {
+    var ran = Math.floor(Math.random() * 3);
 
+    switch(ran) {
+      case 0:
+        return "rock";
+        break;
+      case 1:
+        return "paper";
+        break;
+      default:
+        return "scissors";
+    }
   }
 
-  function playRound(playerSelection, computerSelection) {
-    
-  }
+  function playRound(playerChoice, computerSelection) {
+    if (playerChoice.toLowerCase() == "rock") {
+      switch (computerSelection) {
+        case "rock":
+          return "Rock and rock... It's a tie!";
+          break;
+        case "paper":
+          return "Paper covers rock. You lose.";
+          break;
+        default:
+          return "Rock smashes scissors. You win!";}
+    } else if (playerChoice.toLowerCase() == "paper") {
+      switch (computerSelection) {
+        case "rock":
+          return "Paper covers rock. You win!";
+          break;
+        case "paper":
+          return "Paper and paper... It's a tie!";
+          break;
+        default:
+          return "Scissors cut paper. You lose.";}
+    } else if (playerChoice.toLowerCase() == "scissors") {
+      switch (computerSelection) {
+        case "rock":
+          return "Rock smashes scissors. You lose.";
+          break;
+        case "paper":
+          return "Scissors cut paper. You win!";
+          break;
+        default:
+          return "Scissors and scissors... It's a tie.";}
+    } else {
+      playerChoice = prompt("Let's try that again. Rock, paper, or scissors?")
+    }
+}
+
   </script>
 </body>
 </html>

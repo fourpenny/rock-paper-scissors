@@ -29,6 +29,7 @@ button img {
   box-sizing: border-box;
   margin: 50px 50px 20px 50px;
   border-radius: 4px;
+  padding-bottom: 20px;
 }
 
 h1 {
@@ -37,8 +38,8 @@ h1 {
 }
 
 .icon {
-  height: 50%;
-  width: 50%;
+  height: 40%;
+  width: 40%;
   border-radius: 50%;
 }
 
@@ -69,6 +70,7 @@ h1 {
   display: block;
   margin-left: 25%;
   border-radius: 4px;
+  padding: 15px 0;
 }
 
 .score-display {

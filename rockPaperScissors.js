@@ -59,11 +59,11 @@ function compareResult (player, computer){
       case "rock":
         result = "win";
         score.player++;
-        resultText = "Rock smashes scissors. You lose."
+        resultText = "Paper covers rock. You win!."
         break;
       case "paper":
         result = "tie";
-        resultText = "Scissors and scissors... It's a tie."
+        resultText = "Paper and paper... It's a tie."
         break;
       default:
         result = "lose";
@@ -95,7 +95,11 @@ function postResult(resultText) {
   computerScore.textContent = score.comp;
 
   var li = document.createElement('li');
-  li.className = result + ' list';
+  li.className = 'list';
   li.appendChild(document.createTextNode(resultText));
+  var img = document.createElement('img');
+  img.className = 'status';
+  img.src = "assets/" + result + ".png";
+  li.appendChild(img);
   resultsList.appendChild(li);
 }
